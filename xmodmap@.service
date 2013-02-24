@@ -1,0 +1,12 @@
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=%I
+Type=simple
+Environment=DISPLAY:0.0
+ExecStart=/bin/sh /home/%I/bin/xmodmap.sh
+
+[Install]
+WantedBy=sleep.target
